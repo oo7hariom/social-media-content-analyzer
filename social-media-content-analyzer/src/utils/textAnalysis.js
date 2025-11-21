@@ -8,7 +8,9 @@ export const analyzeText = (text) => {
       hasHashtag: false,
       hasLink: false,
       hasQuestion: false,
-      suggestions: []
+      suggestions: [],
+      hashtags: [],
+      links: []
     };
   }
 
@@ -16,8 +18,24 @@ export const analyzeText = (text) => {
   const wordCount = words.length;
   const charCount = trimmed.length;
 
-  const hasHashtag = /#\w+/.test(trimmed);
-  const hasLink = /(https?:\/\/|www\.)\S+/i.test(trimmed);
+  // collect hashtags
+  const hashtags = [];
+  const hashtagRegex = /#(\w+)/g;
+  let match;
+  while ((match = hashtagRegex.exec(trimmed)) !== null) {
+    hashtags.push(`#${match[1]}`);
+  }
+
+  // collect links
+  const links = [];
+  const linkRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/gi;
+  let linkMatch;
+  while ((linkMatch = linkRegex.exec(trimmed)) !== null) {
+    links.push(linkMatch[0]);
+  }
+
+  const hasHashtag = hashtags.length > 0;
+  const hasLink = links.length > 0;
   const hasQuestion = /\?/.test(trimmed);
   const hasEmoji = /[\u{1F300}-\u{1FAFF}]/u.test(trimmed);
 
@@ -71,6 +89,8 @@ export const analyzeText = (text) => {
     hasHashtag,
     hasLink,
     hasQuestion,
-    suggestions
+    suggestions,
+    hashtags,
+    links
   };
 };
