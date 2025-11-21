@@ -1,16 +1,81 @@
-# React + Vite
+# 📘 Social Media Content Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A browser-based tool that extracts text from PDF files and images and provides simple engagement suggestions for social media content. Everything runs on the client side—no backend and no data storage.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Overview
 
-## React Compiler
+The application lets users upload PDFs or scanned images, extracts the text using PDF parsing or OCR, and then analyzes the content to highlight ways to improve engagement.  
+It is designed to be clean, minimal, and easy to review.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Features include:
 
-## Expanding the ESLint configuration
+- Uploading PDFs and images  
+- Text extraction using pdfjs-dist and Tesseract.js  
+- Loading indicators  
+- Error handling  
+- Basic content analysis  
+- Simple, easy-to-use interface  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔧 Features
+
+### 📄 File Upload
+- Drag-and-drop and file picker support  
+- Accepts: PDF, JPG, PNG  
+
+### 🔍 Text Extraction
+- PDF parsing using `pdfjs-dist`  
+- OCR for images using `Tesseract.js`  
+- All processing done inside the browser  
+
+### 📝 Engagement Suggestions
+- Word and character count  
+- Hashtag detection  
+- Link detection  
+- Question detection  
+- Content length feedback  
+- Suggestions to improve discoverability and engagement  
+
+### 🎨 UI/UX
+- Clean layout  
+- Minimal design  
+- Helpful loading states  
+- Clear error messages  
+
+---
+
+##  Project Structure
+src/
+├── App.jsx
+├── main.jsx
+├── components/
+│   ├── FileUpload.jsx
+│   ├── TextResult.jsx
+│   ├── EngagementSuggestions.jsx
+│   ├── Loader.jsx
+│   └── ErrorAlert.jsx
+├── utils/
+│   └── textAnalysis.js
+└── styles/
+    └── app.css
+
+
+
+---
+
+## 🚀 Getting Started
+
+### Install dependencies
+```bash
+npm install
+
+npm run dev
+---
+
+
+
+
+
