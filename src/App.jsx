@@ -147,12 +147,7 @@ const App = () => {
         </section>
       </main>
 
-      <footer className="app-footer">
-        <p>
-          Built for technical assessment — React-only, client-side PDF &amp; OCR
-          processing.
-        </p>
-      </footer>
+  
     </div>
   );
 };
