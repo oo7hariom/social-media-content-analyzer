@@ -4,6 +4,9 @@ A browser-based tool that extracts text from PDF files and images and provides s
 
 ---
 
+# 🌐 Live Link
+https://social-media-content-analyzer-virid.vercel.app/
+---
 ## ✨ Overview
 
 The application lets users upload PDFs or scanned images, extracts the text using PDF parsing or OCR, and then analyzes the content to highlight ways to improve engagement.  
